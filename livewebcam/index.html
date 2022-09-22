@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Live webcam</title>
+  </head>
+  <body>
+<video id="myVidPlayer" controls muted autoplay></video>
+	  <script type="text/javascript">
+    //Selector for your <video> element
+    const video = document.querySelector('#myVidPlayer');
+
+    //Core
+    window.navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            video.onloadedmetadata = (e) => {
+                video.play();
+            };
+        })
+        .catch( () => {
+            alert('You have give browser the permission to run Webcam and mic ;( ');
+        });
+
+</script>
+	  This is your live webcam. No one can see this and nothing is stored or seen by the server.
+	  Enjoy!!!!!!
+  </body>
+</html>
