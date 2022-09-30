@@ -3,7 +3,7 @@
     <title>PHP STUFF</title>
 	  <style>
         body {
-            background-image: url("/img/forest.jpg");
+            background-image: url("https://kwkzcdfqvquavxhvoaqi.supabase.co/storage/v1/object/public/bucketo/forest.jpg?t=2022-09-30T12%3A43%3A56.815Z");
         }
 	
     </style>
