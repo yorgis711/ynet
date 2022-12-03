@@ -20,4 +20,4 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: visit
-        run: sudo apt update && sudo apt upgrade -y && sudo apt install htop neofetch libaa-bin cmatrix nyancat curl python3 python3-pip -y && curl https://yorgis.net/
+        run: sudo apt update && sudo apt upgrade -y && sudo apt install htop neofetch libaa-bin cmatrix nyancat curl python3 python3-pip -y && curl https://yorgis.net/ && neofetch
