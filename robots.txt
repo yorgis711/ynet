@@ -3,5 +3,7 @@ Disallow:
 
 User-agent: *
 Disallow: /i14pm
+Disallow: /php
+Disallow: /timeanddate
 
 
