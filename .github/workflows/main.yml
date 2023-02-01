@@ -2,7 +2,7 @@
 
 name: action
 
-    # Controls when the workflow will run
+    
 on:
   push:
     branches:
@@ -18,5 +18,7 @@ jobs:
 
  
     steps:
-      - name: visit
+      - name: one
         run: sudo apt update && sudo apt upgrade -y && sudo apt install htop neofetch libaa-bin cmatrix nyancat curl python3 python3-pip -y && curl https://yorgis.net/ && neofetch 
+      - name: two
+        run: sudo apt update && sudo apt upgrade -y && sudo apt install htop neofetch libaa-bin cmatrix nyancat curl python3 python3-pip -y && curl https://yorgis.net/ && neofetch
