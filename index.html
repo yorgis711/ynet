@@ -103,6 +103,41 @@
 
 
             <body onload=display_ct();>
+                
+				<form action="https://form.yorgis711.workers.dev" onsubmit="sendData()">
+  <label for="text">Feedback</label>
+  <input type="text" id="text" name="value">
+  <button type="submit">Submit</button>
+</form>
+<p><a class="github" href="https://github.com/yorgis711"><span>My GitHub</span></a></p>
+				
+		<p id="pageVisits"></p>
+
+    <script>
+      fetch('https://viewcount.vercel.app/api/kv-demo')
+        .then(response => response.json())
+        .then(data => {
+          const pageVisits = data.pageVisits;
+          document.getElementById('pageVisits').innerHTML = `Visits: ${pageVisits}`;
+        });
+    </script>
+<script>
+  async function sendData() {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+    const response = await fetch(form.action + '?value=' + formData.get('value'))
+    const text = await response.text()
+    console.log(text)
+  }
+</script>
+
+
+
+
+
+
+            
                 <span id='ct'></span>
 
             </body>
