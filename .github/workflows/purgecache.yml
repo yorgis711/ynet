@@ -1,0 +1,30 @@
+name: Clear Cloudflare Cache
+
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  clear-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Clear Cloudflare Cache
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        ZONE_ID: 6699614d713b403b1c97d906de8fafa36699614d713b403b1c97d906de8fafa3
+      run: |
+        # Install curl if not already installed
+        sudo apt-get update -y
+        sudo apt-get install -y curl
+
+        # Purge the Cloudflare cache
+        curl -X DELETE "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/purge_cache" \
+          -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+          -H "Content-Type: application/json" \
+          --data '{"purge_everything":true}'
+
+
