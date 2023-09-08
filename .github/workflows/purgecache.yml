@@ -15,7 +15,7 @@ jobs:
     - name: Clear Cloudflare Cache
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        ZONE_ID: 6699614d713b403b1c97d906de8fafa36699614d713b403b1c97d906de8fafa3
+        ZONE_ID: 747c9af393e7af3bd33dd64d5c84767c
       run: |
         # Install curl if not already installed
         sudo apt-get update -y
