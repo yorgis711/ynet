@@ -13,13 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up QEMU for ARM64 emulation
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y qemu-user-static
-          wget https://github.com/multiarch/qemu-user-static/releases/download/v5.2.0-2/qemu-aarch64-static -O /usr/bin/qemu-aarch64-static
-          sudo chmod +x /usr/bin/qemu-aarch64-static
-
+    
       - name: Build Docker Image
         run: |
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/ewfiu:latest .
