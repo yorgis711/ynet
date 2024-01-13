@@ -23,3 +23,6 @@ jobs:
 
       - name: Push to Docker Hub
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ewfiu:latest
+
+      - name: Trigger Container Restart
+        run: curl -X POST https://restart.yorgis.net/restart-container
