@@ -19,7 +19,7 @@ jobs:
       - name: Build Docker Image
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/amd64,linux/arm64 -t yorgis/yorgisnet:ewfiu . 
+          docker buildx build --platform linux/amd64,linux/arm64 -t yorgis/ewfiu/latest . 
           docker images
 
       - name: Log in to Docker Hub
